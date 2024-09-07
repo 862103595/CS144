@@ -130,6 +130,132 @@
 				"file" : 0,
 				"line" : 22,
 				"parent" : 17
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 40,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 20
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 23
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 23
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 26
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 26
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 29
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 29
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 32
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 32
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 45,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 35
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 35
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 38
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 38
 			}
 		]
 	},
@@ -182,6 +308,62 @@
 		{
 			"backtrace" : 19,
 			"id" : "byte_stream_stress_test::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 21,
+			"id" : "reassembler_single_sanitized::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 22,
+			"id" : "reassembler_single::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 24,
+			"id" : "reassembler_cap_sanitized::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 25,
+			"id" : "reassembler_cap::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "reassembler_seq_sanitized::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 28,
+			"id" : "reassembler_seq::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 30,
+			"id" : "reassembler_dup_sanitized::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 31,
+			"id" : "reassembler_dup::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 33,
+			"id" : "reassembler_holes_sanitized::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 34,
+			"id" : "reassembler_holes::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 36,
+			"id" : "reassembler_overlapping_sanitized::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 37,
+			"id" : "reassembler_overlapping::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 39,
+			"id" : "reassembler_win_sanitized::@a44f0ac069e85531cdee"
+		},
+		{
+			"backtrace" : 40,
+			"id" : "reassembler_win::@a44f0ac069e85531cdee"
 		}
 	],
 	"id" : "functionality_testing::@a44f0ac069e85531cdee",

@@ -2,11 +2,14 @@
 
 #include "byte_stream.hh"
 
+#include <map>
+#include <unordered_map>
+
 class Reassembler
 {
 public:
   // Construct Reassembler to write into given ByteStream.
-  explicit Reassembler( ByteStream&& output ) : output_( std::move( output ) ) {}
+  explicit Reassembler( ByteStream&& output ) : output_( std::move( output ) ), reassembled_(), is_last_substring_(false) {}
 
   /*
    * Insert a new substring to be reassembled into a ByteStream.
@@ -42,4 +45,6 @@ public:
 
 private:
   ByteStream output_; // the Reassembler writes to this ByteStream
+  std::unordered_map<uint64_t, std::string> reassembled_;
+  bool is_last_substring_;
 };

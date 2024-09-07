@@ -30,22 +30,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 21,
+				"line" : 13,
 				"parent" : 2
 			}
 		]
 	},
-	"dependencies" : 
-	[
-		{
-			"id" : "tidy_src__byte_stream.cc::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "tidy_src__byte_stream_helpers.cc::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "tidy::@6890427a1f51a3e7e1df",
-	"name" : "tidy",
+	"id" : "tidy_tests__reassembler_seq.cc::@6890427a1f51a3e7e1df",
+	"name" : "tidy_tests__reassembler_seq.cc",
 	"paths" : 
 	{
 		"build" : ".",
@@ -54,7 +45,7 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "",
+			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
 				0
@@ -73,13 +64,13 @@
 		{
 			"backtrace" : 3,
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/tidy",
+			"path" : "cmake-build-debug/CMakeFiles/tidy_tests__reassembler_seq.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/tidy.rule",
+			"path" : "cmake-build-debug/CMakeFiles/tidy_tests__reassembler_seq.cc.rule",
 			"sourceGroupIndex" : 1
 		}
 	],
