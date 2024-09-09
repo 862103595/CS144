@@ -45,6 +45,6 @@ public:
 
 private:
   ByteStream output_; // the Reassembler writes to this ByteStream
-  std::unordered_map<uint64_t, std::string> reassembled_;
+  std::map<uint64_t, std::string> reassembled_;
   bool is_last_substring_;
 };

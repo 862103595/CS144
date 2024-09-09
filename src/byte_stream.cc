@@ -14,14 +14,16 @@ bool Writer::is_closed() const
 void Writer::push( string data )
 {
   // Your code here.
-  if ( is_closed() ) {
+  if ( is_closed() || available_capacity() == 0 || data.empty()) {
     return;
   }
+  // 遍历数据中的每个字符
   if(data.size() > available_capacity()) {
-    data.resize(available_capacity());
+     data.resize( available_capacity() );
   }
-  buffer_.append( std::move( data ) );
   total_pushed_bytes_ += data.size();
+  buffer_.push_back( std::move( data ) );
+
 }
 
 void Writer::close()
@@ -33,7 +35,7 @@ void Writer::close()
 uint64_t Writer::available_capacity() const
 {
   // Your code here.
-  return capacity_ - buffer_.size();
+  return capacity_ - (total_pushed_bytes_ - total_popped_bytes_);
 }
 
 uint64_t Writer::bytes_pushed() const
@@ -58,23 +60,34 @@ string_view Reader::peek() const
 {
   // Your code here.
   if (buffer_.empty()) {
-    return std::string_view();  // Return an empty view if nothing to peek.
+    return std::string_view();  // 返回空的 string_view
   }
-  return std::string_view(buffer_.data(), buffer_.size());
+  return string_view(buffer_.front());
 }
 
 void Reader::pop( uint64_t len )
 {
   // Your code here.
-  if (len > buffer_.size()) {
-    len = buffer_.size();
+  len = min(len, total_pushed_bytes_-total_popped_bytes_);
+  while(len > 0) {
+    string& front = buffer_.front();
+    if (len >= front.size()) {
+      len -= front.size();
+      total_popped_bytes_ += front.size();
+      buffer_.pop_front();
+
+    }
+    else {
+      front = front.substr( len );
+      total_popped_bytes_ += len;
+      len = 0;
+    }
   }
-  buffer_.erase( 0, len );
-  total_popped_bytes_ += len;
+
 }
 
 uint64_t Reader::bytes_buffered() const
 {
   // Your code here.
-  return buffer_.size();
+  return total_pushed_bytes_-total_popped_bytes_;
 }

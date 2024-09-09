@@ -65,6 +65,18 @@
 			"id" : "tidy_src__reassembler.hh::@6890427a1f51a3e7e1df"
 		},
 		{
+			"id" : "tidy_src__tcp_receiver.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_src__tcp_receiver.hh::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_src__wrapping_integers.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_src__wrapping_integers.hh::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "tidy_tests__byte_stream_basics.cc::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -125,7 +137,46 @@
 			"id" : "tidy_tests__reassembler_win.cc::@6890427a1f51a3e7e1df"
 		},
 		{
+			"id" : "tidy_tests__receiver_test_harness.hh::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__recv_close.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__recv_connect.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__recv_reorder.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__recv_reorder_more.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__recv_special.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__recv_transmit.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__recv_window.cc::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "tidy_tests__test_should_be.hh::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__wrapping_integers_cmp.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__wrapping_integers_extra.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__wrapping_integers_roundtrip.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__wrapping_integers_unwrap.cc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_tests__wrapping_integers_wrap.cc::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "tidy_util__address.cc::@6890427a1f51a3e7e1df"
@@ -174,6 +225,15 @@
 		},
 		{
 			"id" : "tidy_util__socket.hh::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_util__tcp_config.hh::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_util__tcp_receiver_message.hh::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "tidy_util__tcp_sender_message.hh::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "tidy_util__tun.cc::@6890427a1f51a3e7e1df"

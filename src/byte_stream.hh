@@ -1,9 +1,11 @@
 #pragma once
 
 #include <cstdint>
+#include <deque>
 #include <string>
 #include <string_view>
 #include <vector>
+#include <queue>
 
 class Reader;
 class Writer;
@@ -27,10 +29,9 @@ protected:
   uint64_t capacity_;
   bool error_ ;
   bool closed_ ;
-  std::string buffer_;
+  std::deque<std::string> buffer_;
   uint64_t  total_popped_bytes_ ;
   uint64_t  total_pushed_bytes_ ;
-
 
 };
 
