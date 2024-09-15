@@ -9,7 +9,7 @@
 		],
 		"files" : 
 		[
-			"etc/tests.cmake",
+			"etc/scanners.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -20,7 +20,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 16,
+				"line" : 15,
 				"parent" : 0
 			},
 			{
@@ -30,13 +30,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 73,
+				"line" : 13,
 				"parent" : 2
 			}
 		]
 	},
-	"id" : "check5::@6890427a1f51a3e7e1df",
-	"name" : "check5",
+	"id" : "tidy_util__tcp_peer.hh::@6890427a1f51a3e7e1df",
+	"name" : "tidy_util__tcp_peer.hh",
 	"paths" : 
 	{
 		"build" : ".",
@@ -45,7 +45,7 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "",
+			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
 				0
@@ -64,13 +64,13 @@
 		{
 			"backtrace" : 3,
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/check5",
+			"path" : "cmake-build-debug/CMakeFiles/tidy_util__tcp_peer.hh",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/check5.rule",
+			"path" : "cmake-build-debug/CMakeFiles/tidy_util__tcp_peer.hh.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

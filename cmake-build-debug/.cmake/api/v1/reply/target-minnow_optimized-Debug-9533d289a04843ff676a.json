@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "util/libutil_optimized.a"
+			"path" : "src/libminnow_optimized.a"
 		}
 	],
 	"backtrace" : 1,
@@ -17,7 +17,7 @@
 		],
 		"files" : 
 		[
-			"util/CMakeLists.txt",
+			"src/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -100,13 +100,13 @@
 			]
 		}
 	],
-	"id" : "util_optimized::@5865449b717dd869d2cd",
-	"name" : "util_optimized",
-	"nameOnDisk" : "libutil_optimized.a",
+	"id" : "minnow_optimized::@145eef247bfb46b6828c",
+	"name" : "minnow_optimized",
+	"nameOnDisk" : "libminnow_optimized.a",
 	"paths" : 
 	{
-		"build" : "util",
-		"source" : "util"
+		"build" : "src",
+		"source" : "src"
 	},
 	"sourceGroups" : 
 	[
@@ -130,49 +130,49 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/address.cc",
+			"path" : "src/byte_stream.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/eventloop.cc",
+			"path" : "src/byte_stream_helpers.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/file_descriptor.cc",
+			"path" : "src/network_interface.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/ipv4_header.cc",
+			"path" : "src/reassembler.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/random.cc",
+			"path" : "src/tcp_minnow_socket.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/socket.cc",
+			"path" : "src/tcp_receiver.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/tcp_segment.cc",
+			"path" : "src/tcp_sender.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "util/tun.cc",
+			"path" : "src/wrapping_integers.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

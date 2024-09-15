@@ -72,7 +72,7 @@ add_test([=[send_close]=] "/home/xiejh/minnow/cmake-build-debug/tests/send_close
 set_tests_properties([=[send_close]=] PROPERTIES  FIXTURES_REQUIRED "compile" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;10;add_test;/home/xiejh/minnow/etc/tests.cmake;54;ttest;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")
 add_test([=[send_extra]=] "/home/xiejh/minnow/cmake-build-debug/tests/send_extra_sanitized")
 set_tests_properties([=[send_extra]=] PROPERTIES  FIXTURES_REQUIRED "compile" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;10;add_test;/home/xiejh/minnow/etc/tests.cmake;55;ttest;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")
-add_test([=[net_interface]=] "net_interface_sanitized")
+add_test([=[net_interface]=] "/home/xiejh/minnow/cmake-build-debug/tests/net_interface_sanitized")
 set_tests_properties([=[net_interface]=] PROPERTIES  FIXTURES_REQUIRED "compile" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;10;add_test;/home/xiejh/minnow/etc/tests.cmake;57;ttest;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")
 add_test([=[router]=] "router_sanitized")
 set_tests_properties([=[router]=] PROPERTIES  FIXTURES_REQUIRED "compile" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;10;add_test;/home/xiejh/minnow/etc/tests.cmake;59;ttest;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")

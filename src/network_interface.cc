@@ -28,20 +28,83 @@ NetworkInterface::NetworkInterface( string_view name,
 void NetworkInterface::send_datagram( const InternetDatagram& dgram, const Address& next_hop )
 {
   // Your code here.
-  (void)dgram;
-  (void)next_hop;
+  if(cache.contains( next_hop.ipv4_numeric() )) {
+    const EthernetAddress &dst = cache[next_hop.ipv4_numeric()].first;
+    return transmit( {{dst, ethernet_address_, EthernetHeader::TYPE_IPv4}, serialize( dgram )} );
+  }
+  else {
+    if(!last_req_time.contains( next_hop.ipv4_numeric())) {
+      ARPMessage arp;
+      arp.opcode = ARPMessage::OPCODE_REQUEST;
+      arp.sender_ethernet_address = ethernet_address_;
+      arp.sender_ip_address = ip_address_.ipv4_numeric();
+      arp.target_ip_address = next_hop.ipv4_numeric();
+      transmit( {{ETHERNET_BROADCAST, ethernet_address_, EthernetHeader::TYPE_ARP}, serialize( arp )} );
+      last_req_time[next_hop.ipv4_numeric()] = 0;
+    }
+    waiting[next_hop.ipv4_numeric()] =  dgram;
+  }
+
 }
 
 //! \param[in] frame the incoming Ethernet frame
 void NetworkInterface::recv_frame( const EthernetFrame& frame )
 {
   // Your code here.
-  (void)frame;
+  if(frame.header.type == EthernetHeader::TYPE_IPv4 && frame.header.dst == ethernet_address_) {
+    InternetDatagram data;
+    if(parse( data, frame.payload )) {
+      datagrams_received().push( data );
+    }
+  }
+  else if(frame.header.type == EthernetHeader::TYPE_ARP) {
+    ARPMessage arp;
+    parse( arp, frame.payload );
+    cache[arp.sender_ip_address] = {arp.sender_ethernet_address, 0};
+    if(waiting.contains( arp.sender_ip_address )) {
+      send_datagram( waiting[arp.sender_ip_address], Address::from_ipv4_numeric( arp.sender_ip_address ) );
+      waiting.erase( arp.sender_ip_address );
+    }
+    if(arp.opcode == ARPMessage::OPCODE_REPLY) {
+      cache[arp.target_ip_address] = {arp.target_ethernet_address, 0};
+      if(waiting.contains( arp.target_ip_address )) {
+        send_datagram( waiting[arp.target_ip_address], Address::from_ipv4_numeric( arp.target_ip_address ) );
+        waiting.erase( arp.target_ip_address );
+      }
+    }
+    if(arp.opcode == ARPMessage::OPCODE_REQUEST && arp.target_ip_address == ip_address_.ipv4_numeric()) {
+      ARPMessage reply_arp;
+      reply_arp.opcode = ARPMessage::OPCODE_REPLY;
+      reply_arp.sender_ethernet_address = ethernet_address_;
+      reply_arp.sender_ip_address = ip_address_.ipv4_numeric();
+      reply_arp.target_ethernet_address = arp.sender_ethernet_address;
+      reply_arp.target_ip_address = arp.sender_ip_address;
+      transmit( {{arp.sender_ethernet_address, ethernet_address_, EthernetHeader::TYPE_ARP}, serialize( reply_arp )} );
+    }
+  }
 }
 
 //! \param[in] ms_since_last_tick the number of milliseconds since the last call to this method
 void NetworkInterface::tick( const size_t ms_since_last_tick )
 {
   // Your code here.
-  (void)ms_since_last_tick;
+  for(auto it = cache.begin(); it != cache.end(); ) {
+    if(it->second.second + ms_since_last_tick > 30000) {
+      it = cache.erase( it );
+    }
+    else {
+      it->second.second += ms_since_last_tick;
+      ++it;
+    }
+  }
+
+  for(auto it = last_req_time.begin(); it != last_req_time.end(); ) {
+    if(it->second + ms_since_last_tick > 5000) {
+      it = last_req_time.erase( it );
+    }
+    else {
+      it->second += ms_since_last_tick;
+      ++it;
+    }
+  }
 }

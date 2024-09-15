@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "tests/byte_stream_speed_test"
+			"path" : "apps/tcp_ipv4"
 		}
 	],
 	"backtrace" : 2,
@@ -11,14 +11,13 @@
 		"commands" : 
 		[
 			"add_executable",
-			"add_speed_test",
+			"add_app",
 			"target_link_libraries",
-			"target_compile_options",
 			"include_directories"
 		],
 		"files" : 
 		[
-			"tests/CMakeLists.txt",
+			"apps/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -29,44 +28,44 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 70,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 26,
+				"line" : 4,
 				"parent" : 1
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 28,
+				"line" : 5,
 				"parent" : 1
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 29,
+				"line" : 6,
 				"parent" : 1
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
-				"line" : 27,
+				"line" : 7,
 				"parent" : 1
 			},
 			{
 				"file" : 1
 			},
 			{
-				"command" : 4,
+				"command" : 3,
 				"file" : 1,
 				"line" : 18,
 				"parent" : 6
 			},
 			{
-				"command" : 4,
+				"command" : 3,
 				"file" : 1,
 				"line" : 19,
 				"parent" : 6
@@ -80,10 +79,6 @@
 			[
 				{
 					"fragment" : " -Wall -Wpedantic -Wextra -Weffc++ -Werror -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Wno-unqualified-std-cast-call -Wno-non-virtual-dtor -g -std=gnu++20 -fdiagnostics-color=always"
-				},
-				{
-					"backtrace" : 5,
-					"fragment" : "-O2"
 				}
 			],
 			"includes" : 
@@ -115,15 +110,19 @@
 	"dependencies" : 
 	[
 		{
+			"backtrace" : 5,
+			"id" : "util_debug::@5865449b717dd869d2cd"
+		},
+		{
 			"backtrace" : 4,
-			"id" : "util_optimized::@5865449b717dd869d2cd"
+			"id" : "minnow_debug::@145eef247bfb46b6828c"
 		},
 		{
 			"backtrace" : 3,
-			"id" : "minnow_optimized::@145eef247bfb46b6828c"
+			"id" : "stream_copy::@9e189ee61a034fc9b705"
 		}
 	],
-	"id" : "byte_stream_speed_test::@a44f0ac069e85531cdee",
+	"id" : "tcp_ipv4::@9e189ee61a034fc9b705",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -138,23 +137,28 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "src/libminnow_optimized.a",
+				"fragment" : "apps/libstream_copy.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "util/libutil_optimized.a",
+				"fragment" : "src/libminnow_debug.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "util/libutil_debug.a",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "byte_stream_speed_test",
-	"nameOnDisk" : "byte_stream_speed_test",
+	"name" : "tcp_ipv4",
+	"nameOnDisk" : "tcp_ipv4",
 	"paths" : 
 	{
-		"build" : "tests",
-		"source" : "tests"
+		"build" : "apps",
+		"source" : "apps"
 	},
 	"sourceGroups" : 
 	[
@@ -171,7 +175,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "tests/byte_stream_speed_test.cc",
+			"path" : "apps/tcp_ipv4.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

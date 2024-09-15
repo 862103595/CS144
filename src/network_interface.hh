@@ -6,6 +6,9 @@
 #include "ethernet_frame.hh"
 #include "ipv4_datagram.hh"
 
+#include <map>
+#include <unordered_map>
+
 // A "network interface" that connects IP (the internet layer, or network layer)
 // with Ethernet (the network access layer, or link layer).
 
@@ -81,4 +84,9 @@ private:
 
   // Datagrams that have been received
   std::queue<InternetDatagram> datagrams_received_ {};
+
+  using Address_numeric = u_int32_t;
+  std::unordered_map<Address_numeric, std::pair<EthernetAddress, size_t>> cache {};
+  std::unordered_map<Address_numeric, size_t> last_req_time {};
+  std::unordered_map<Address_numeric, InternetDatagram> waiting {};
 };
