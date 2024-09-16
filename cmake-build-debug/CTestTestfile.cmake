@@ -74,7 +74,7 @@ add_test([=[send_extra]=] "/home/xiejh/minnow/cmake-build-debug/tests/send_extra
 set_tests_properties([=[send_extra]=] PROPERTIES  FIXTURES_REQUIRED "compile" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;10;add_test;/home/xiejh/minnow/etc/tests.cmake;55;ttest;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")
 add_test([=[net_interface]=] "/home/xiejh/minnow/cmake-build-debug/tests/net_interface_sanitized")
 set_tests_properties([=[net_interface]=] PROPERTIES  FIXTURES_REQUIRED "compile" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;10;add_test;/home/xiejh/minnow/etc/tests.cmake;57;ttest;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")
-add_test([=[router]=] "router_sanitized")
+add_test([=[router]=] "/home/xiejh/minnow/cmake-build-debug/tests/router_sanitized")
 set_tests_properties([=[router]=] PROPERTIES  FIXTURES_REQUIRED "compile" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;10;add_test;/home/xiejh/minnow/etc/tests.cmake;59;ttest;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")
 add_test([=[compile with optimization]=] "/home/xiejh/.cache/JetBrains/RemoteDev/dist/ce40994fdc0ab_CLion-2024.2.1/bin/cmake/linux/x64/bin/cmake" "--build" "/home/xiejh/minnow/cmake-build-debug" "-t" "speed_testing")
 set_tests_properties([=[compile with optimization]=] PROPERTIES  FIXTURES_SETUP "compile_opt" TIMEOUT "0" _BACKTRACE_TRIPLES "/home/xiejh/minnow/etc/tests.cmake;80;add_test;/home/xiejh/minnow/etc/tests.cmake;0;;/home/xiejh/minnow/CMakeLists.txt;16;include;/home/xiejh/minnow/CMakeLists.txt;0;")

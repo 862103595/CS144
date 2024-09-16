@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "src/libminnow_sanitized.a"
+			"path" : "src/libminnow_optimized.a"
 		}
 	],
 	"backtrace" : 1,
@@ -28,13 +28,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 5,
+				"line" : 8,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 6,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -64,15 +64,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"fragment" : "-fno-sanitize-recover=all"
-				},
-				{
-					"backtrace" : 2,
-					"fragment" : "-fsanitize=undefined"
-				},
-				{
-					"backtrace" : 2,
-					"fragment" : "-fsanitize=address"
+					"fragment" : "-O2"
 				}
 			],
 			"includes" : 
@@ -104,13 +96,14 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8
 			]
 		}
 	],
-	"id" : "minnow_sanitized::@145eef247bfb46b6828c",
-	"name" : "minnow_sanitized",
-	"nameOnDisk" : "libminnow_sanitized.a",
+	"id" : "minnow_optimized::@145eef247bfb46b6828c",
+	"name" : "minnow_optimized",
+	"nameOnDisk" : "libminnow_optimized.a",
 	"paths" : 
 	{
 		"build" : "src",
@@ -129,7 +122,8 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8
 			]
 		}
 	],
@@ -157,6 +151,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/reassembler.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/router.cc",
 			"sourceGroupIndex" : 0
 		},
 		{

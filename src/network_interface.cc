@@ -33,6 +33,7 @@ void NetworkInterface::send_datagram( const InternetDatagram& dgram, const Addre
     return transmit( {{dst, ethernet_address_, EthernetHeader::TYPE_IPv4}, serialize( dgram )} );
   }
   else {
+    waiting[next_hop.ipv4_numeric()] =  dgram;
     if(!last_req_time.contains( next_hop.ipv4_numeric())) {
       ARPMessage arp;
       arp.opcode = ARPMessage::OPCODE_REQUEST;
@@ -42,7 +43,7 @@ void NetworkInterface::send_datagram( const InternetDatagram& dgram, const Addre
       transmit( {{ETHERNET_BROADCAST, ethernet_address_, EthernetHeader::TYPE_ARP}, serialize( arp )} );
       last_req_time[next_hop.ipv4_numeric()] = 0;
     }
-    waiting[next_hop.ipv4_numeric()] =  dgram;
+
   }
 
 }

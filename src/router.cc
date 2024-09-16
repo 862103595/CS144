@@ -21,10 +21,33 @@ void Router::add_route( const uint32_t route_prefix,
        << " on interface " << interface_num << "\n";
 
   // Your code here.
+  if(prefix_length == 0) {
+    routing_table_[32][0] = {interface_num, next_hop};
+  }
+  else {
+    routing_table_[32 - prefix_length][route_prefix>>(32 - prefix_length)] = {interface_num, next_hop};
+  }
+
 }
 
 // Go through all the interfaces, and route every incoming datagram to its proper outgoing interface.
 void Router::route()
 {
   // Your code here.
+  for(const auto& ptr: _interfaces) {
+    while (!ptr->datagrams_received().empty()) {
+      InternetDatagram data = ptr->datagrams_received().front();
+      ptr->datagrams_received().pop();
+      if(data.header.ttl <= 1) { continue; }
+      const uint32_t& dst = data.header.dst;
+      for(int i = 0; i <= 32; i++) {
+        if(routing_table_[i].contains( (i != 32) ?dst >> i:0 )) {
+          data.header.ttl--;
+          data.header.compute_checksum();
+          interface( routing_table_[i][(i != 32) ?dst >> i:0].first )->send_datagram( data, routing_table_[i][(i != 32) ?dst >> i:0].second.value_or( Address::from_ipv4_numeric( dst ) ) );
+          break;
+        }
+      }
+    }
+  }
 }
